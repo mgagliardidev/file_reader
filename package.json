@@ -2,12 +2,12 @@
   "name": "file_reader",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
     "start": "node dist/server.js",
-    "dev": "nodemon server.ts"
+    "dev": "nodemon ./server.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,8 @@
     "@types/express": "^4.17.21",
     "express": "^4.19.2",
     "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "n-readlines": "^1.0.1"
   }
 }
