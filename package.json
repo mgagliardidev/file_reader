@@ -2,13 +2,13 @@
   "name": "file_reader",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
     "startts": "node dist/server.js",
-    "dev": "nodemon ./server.ts",
+    "dev": "nodemon ./app.ts",
     "start": "node ./app.js"
   },
   "keywords": [],
