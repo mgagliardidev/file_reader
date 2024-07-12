@@ -100,17 +100,33 @@ function readFileLocal(req: Request, res: Response): void {
 }
 
 function elaborateData(text: string, resBody: FileReaderResponse) {
-  // TODO change logic to reduce iterations
-  resBody.numberOfChars = text.match(/\S/g)?.length ?? 0;
-  resBody.numberOfWords = text.match(/\b\w+\b/g)?.length ?? 0;
-  resBody.numberOfSpaces = text.split(" ").length - 1;
   resBody.repeatedWordsObject = {};
 
-  for (const w of text.match(/\b\w+\b/g)!) {
-    if (resBody.repeatedWordsObject[w]) {
-      resBody.repeatedWordsObject[w]++;
-    } else {
-      resBody.repeatedWordsObject[w] = 1;
+  resBody.numberOfChars = 0;
+  resBody.numberOfWords = 0;
+  resBody.numberOfSpaces = 0;
+
+  let word: string = "";
+  let i: number = 0;
+
+  for (const w of text) {
+    i++;
+    if (w.match(/\S/)) {
+      word += w;
+      resBody.numberOfChars++;
+    }
+    if (w == " ") {
+      resBody.numberOfSpaces++;
+    }
+    if (w == " " || w == "\n" && i < text.length) {
+      resBody.numberOfWords++;
+      if (resBody.repeatedWordsObject[word]) {
+        resBody.repeatedWordsObject[word]++;
+      } else {
+        resBody.repeatedWordsObject[word] = 1;
+      }
+
+      word = "";
     }
   }
 }
