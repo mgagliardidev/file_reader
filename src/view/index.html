@@ -23,7 +23,7 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        padding: 15px;
+        padding: 10px;
         font-size: 16px;
         border-radius: 12px;
       }
@@ -73,7 +73,7 @@
   <body>
     <section>
       <div class="textdiv">
-        <input type="text" placeholder="Insert path (ex: C:/Dev/file.txt)" />
+        <input id="submitspace" type="text"/>
       </div>
       <div style="display: flex; justify-content: center">
         <select name="inputypes" id="inputtypes">
@@ -81,7 +81,13 @@
           <option value="web">URL</option>
         </select>
         <div style="width: 30px"></div>
-        <button class="textbutton">Submit</button>
+        <button id="submitbtn" class="textbutton">Submit</button>
+      </div>
+      <div id = "container">
+        <p id="numberOfWords"></p>
+        <p id="numberOfChars"></p>
+        <p id="numberOfSpaces"></p>
+        <p id="repeatedWordsObject"></p>
       </div>
     </section>
     <script>

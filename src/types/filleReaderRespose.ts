@@ -5,4 +5,5 @@ export interface FileReaderResponse {
     numberOfChars?: number;
     numberOfSpaces?: number;
     repeatedWordsObject?: Record<string, number>;
+    [key: string]: any;
 }
