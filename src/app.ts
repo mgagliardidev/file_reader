@@ -3,12 +3,15 @@ import path from 'path';
 
 const app: Application = express();
 const port = 3000;
-const homePath = path.join(__dirname, '/view/index.html');
+const rootPath = require('get-root-path');
 
 const readFileRouter = require('./api/readFile');
 
+app.use( express.static( path.join( rootPath.default, 'src', 'view' ) ) );
+app.use( express.static( path.join( rootPath.default, 'dist', 'public' ) ) );
+
 app.get("/", (req: Request, res: Response) => {
-  res.sendFile(homePath);
+  res.sendFile(path.join(rootPath.default, 'src', 'view', 'index.html'));
 });
 
 app.listen(port, () => {
