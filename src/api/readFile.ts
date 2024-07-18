@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { FileReaderResponse } from "../types/filleReaderRespose";
+import { FileReaderResponse } from "../types/fileReaderResponse";
 
 const router = express.Router();
 const bodyParser = require("body-parser").json();

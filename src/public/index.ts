@@ -1,4 +1,4 @@
-import { FileReaderResponse } from "../types/filleReaderRespose";
+import { FileReaderResponse } from "../types/fileReaderResponse";
 
 const selectElement = document.getElementById(
   "inputtypes"
