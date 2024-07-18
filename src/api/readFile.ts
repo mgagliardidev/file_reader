@@ -108,7 +108,6 @@ function elaborateData(text: string, resBody: FileReaderResponse) {
 
   let word: string = "";
   let i: number = 0;
-
   for (const w of text) {
     i++;
     if (w.match(/\S/)) {
@@ -118,14 +117,17 @@ function elaborateData(text: string, resBody: FileReaderResponse) {
     if (w == " ") {
       resBody.numberOfSpaces++;
     }
-    if (w == " " || w == "\n" && i < text.length) {
-      resBody.numberOfWords++;
+    if (w == " " || w == "\n" || i == text.length) {
+      
+      if (word.length) {
+        resBody.numberOfWords++;
       if (resBody.repeatedWordsObject[word]) {
         resBody.repeatedWordsObject[word]++;
       } else {
         resBody.repeatedWordsObject[word] = 1;
       }
-
+      }
+    
       word = "";
     }
   }
