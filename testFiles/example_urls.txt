@@ -1,0 +1,2 @@
+https://github.com/jumping/urlwatch/blob/master/examples/urls.txt.example
+https://www.ietf.org/rfc/rfc2616.txt
