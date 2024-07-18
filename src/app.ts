@@ -20,3 +20,6 @@ app.listen(port, () => {
 
 // indexing routes
 app.use("/readFile", readFileRouter);
+
+// add default export for app
+module.exports = app;
